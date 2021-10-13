@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Run Nginx server in background (available at port 8080)
           command: |
-            run --name nginx -p "8080:80" nginx
+            docker run --name nginx -p "8080:80" nginx
       - run:
           name: Wait for Nginx to be ready
           command: |
