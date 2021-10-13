@@ -8,11 +8,11 @@ jobs:
       - run:
           name: Install dockerize
           command: |
-            # copied from CircleCI's images
+            # sampled from CircleCI's images
             # See https://github.com/CircleCI-Public/cimg-base/blob/204a4822173265dba9a43d4aca6386ad7d76f793/Dockerfile.template#L32-L36
-            curl -sSL --fail --retry 3 --output /tmp/dockerize-linux-amd64.tar.gz "https://circle-downloads.s3.amazonaws.com/circleci-images/cache/linux-amd64/dockerize-latest.tar.gz" && \
-            tar -C /usr/local/bin -xzvf /tmp/dockerize-linux-amd64.tar.gz && \
-            rm -rf /tmp/dockerize-linux-amd64.tar.gz && \
+            sudo curl -sSL --fail --retry 3 --output /tmp/dockerize-linux-amd64.tar.gz "https://circle-downloads.s3.amazonaws.com/circleci-images/cache/linux-amd64/dockerize-latest.tar.gz"
+            sudo tar -C /usr/local/bin -xzvf /tmp/dockerize-linux-amd64.tar.gz
+            sudo rm -rf /tmp/dockerize-linux-amd64.tar.gz
             # Quick test of Dockerize
             dockerize --version
       - run:
